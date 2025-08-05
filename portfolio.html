@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sujith Kasthuri - Automation Workflow Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --teal: #00BFA6;
+      --white: #FFFFFF;
+      --sunshine: #FFD500;
+      --pink: #FF6B6B;
+      --gray-light: #E0E0E0;
+      --gray-dark: #22223B;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(120deg, var(--white) 60%, #f6fff9 100%);
+      color: var(--navy);
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 40px 18px 18px 18px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+    .profile-pic img {
+      border-radius: 50%;
+      border: 4px solid var(--teal);
+      width: 120px; height: 120px;
+      box-shadow: 0 0 28px var(--teal), 0 8px 20px rgba(0,0,0,.05);
+      object-fit: cover;
+      background: var(--white);
+      margin-bottom: 8px;
+    }
+    .name-section h1 {
+      margin: 4px 0 2px 0;
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+    .name-section p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 1.13rem;
+      color: var(--teal);
+      letter-spacing: .04em;
+    }
+    .social-links {
+      display: flex;
+      gap: 18px;
+      margin: 13px 0 4px 0;
+    }
+    .social-link {
+      display: flex; align-items: center; color: var(--white);
+      font-weight: 600; text-decoration: none; gap: 8px; font-size: 1.09rem;
+      transition: color 0.2s;
+    }
+    .social-link svg { fill: currentColor; }
+    .social-link:hover { color: var(--sunshine); }
+    nav.nav-menu {
+      margin: 15px 0 0 0; text-align: center; display: flex;
+      justify-content: center;
+      flex-wrap: wrap; gap: 14px; z-index: 2; 
+    }
+    nav.nav-menu button {
+      background: linear-gradient(90deg,var(--pink), var(--sunshine), var(--teal));
+      border: none;
+      color: var(--white);
+      padding: 9px 22px;
+      font-size: 1.06rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(255, 107, 107, .13);
+      transition: background 0.25s, color 0.2s, box-shadow 0.22s;
+      outline: none;
+      letter-spacing: .02em;
+    }
+    nav.nav-menu button:hover, nav.nav-menu button:focus {
+      background: var(--teal);
+      color: var(--navy);
+      box-shadow: 0 0 0 4px var(--sunshine);
+    }
+    section {
+      margin-top: 44px;
+      background: var(--white);
+      padding: 32px 30px 25px 30px;
+      border: 1.4px solid var(--gray-light);
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    h2.section-title {
+      color: var(--teal);
+      font-size: 1.7rem;
+      margin-bottom: 22px;
+      border-bottom: 3px solid var(--sunshine);
+      padding-bottom: 8px;
+      font-weight: 790;
+      letter-spacing: .02em;
+    }
+    .contact-info {
+      display: flex; flex-wrap: wrap; gap: 36px;
+      font-weight: 700;
+      font-size: 1.13rem;
+      color: var(--navy);
+    }
+    .contact-item { display: flex; align-items: center; gap: 14px; }
+    .contact-item svg { fill: var(--teal); min-width: 22px; }
+    .experience-item { margin-top: 10px; }
+    .experience-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .job-title { margin: 0 0 6px 0; font-weight: 700; color: var(--navy); font-size: 1.2rem; }
+    .company { font-style: italic; color: var(--gray-dark); font-size: 1.09rem; }
+    .job-description { margin-top: 0; margin-bottom: 12px; font-size: 1.06rem; color: var(--gray-dark); }
+
+    .achievements { list-style-type: disc; padding-left: 22px; font-size: 1.02rem; color: var(--gray-dark); }
+    .education-table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 1.06rem; }
+    .education-table th, .education-table td {
+      border: 1px solid var(--gray-light);
+      padding: 13px 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .education-table th { background-color: var(--navy); color: var(--white);}
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(202px, 1fr)); gap: 18px; font-size: 1.02rem;
+    }
+    .skill-name { font-weight: 600; margin-bottom: 7px; color: var(--navy); }
+    .skill-bar { background-color: var(--gray-light); border-radius: 30px; overflow: hidden; height: 15px; }
+    .skill-progress { background: linear-gradient(90deg,var(--teal),var(--sunshine)); height: 100%; border-radius: 30px 0 0 30px; }
+    .hobbies-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+    }
+    .hobby-item { display: flex; gap: 15px;}
+    .hobby-item svg { flex-shrink: 0; fill: var(--teal); width: 40px; height: 40px; }
+    .hobby-item h4 { margin: 0 0 5px 0; color: var(--navy); font-size: 1.2rem; }
+    .hobby-item p { margin: 0; color: var(--gray-dark); font-size: 0.98rem;}
+    footer {
+      text-align: center;
+      margin-top: 62px;
+      padding: 22px 10px;
+      font-size: 1rem;
+      color: var(--gray-dark);
+      border-top: 1px solid var(--gray-light);
+      font-weight: 600;
+      background: linear-gradient(90deg,#ecfaf4 40%,#faeddd 100%);
+      border-radius: 0 0 20px 20px;
+    }
+    @media (max-width: 650px) {
+      .container { padding: 4px; }
+      header { padding: 28px 4px 8px 4px; }
+      nav.nav-menu { flex-direction: column; gap: 9px; }
+      section { padding: 18px 4vw 16px 4vw; }
+      .skills-grid, .hobbies-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="profile-pic">
+      <img src="./newpassport.png" alt="Sujith Kasthuri Profile Picture">
+    </div>
+    <div class="name-section">
+      <h1>Sujith Kasthuri</h1>
+      <p>Automation Workflow Specialist</p>
+    </div>
+    <div class="social-links">
+      <a href="https://github.com/Sujithkasturi" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sujith-kasthuri-3474411b1" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+    <nav class="nav-menu">
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
+      <button onclick="document.getElementById('profile-summary').scrollIntoView({behavior: 'smooth'})">Profile Summary</button>
+      <button onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">Experience</button>
+      <button onclick="document.getElementById('education').scrollIntoView({behavior: 'smooth'})">Education</button>
+      <button onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">Skills</button>
+      <button onclick="document.getElementById('hobbies').scrollIntoView({behavior: 'smooth'})">Hobbies</button>
+    </nav>
+  </header>
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span>9618660539</span>
+      </div>
+      <div class="contact-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>sujithkasthuri2000@gmail.com</span>
+      </div>
+    </div>
+  </section>
+  <section id="profile-summary">
+    <h2 class="section-title">Profile Summary</h2>
+    <p>
+      Automation Workflow Specialist with strong experience in building workflows for digital marketing services. Expert in tools like n8n, Google Sheets, WhatsApp API, and integrating CRMs for lead flow automation and reporting. Focused on performance, speed, and low-code efficiency.
+    </p>
+  </section>
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="experience-item">
+      <div class="experience-header">
+        <h3 class="job-title">Automation Workflow Specialist</h3>
+        <span class="company">Bristletech</span>
+      </div>
+      <p class="job-description">
+        Specialized in developing and implementing automation solutions for digital marketing workflows. Responsible for designing efficient processes that streamline campaign management, data analysis, and reporting systems.
+      </p>
+      <ul class="achievements">
+        <li>Designed lead assignment automation using Google Sheets + n8n</li>
+        <li>Integrated WhatsApp API for sales feedback</li>
+        <li>Built daily reporting workflows for management</li>
+        <li>Developed smart automations for Meta Ads and CRM sync</li>
+      </ul>
+    </div>
+  </section>
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <table class="education-table">
+      <thead>
+        <tr>
+          <th>Degree</th>
+          <th>Specialization</th>
+          <th>Institution</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bachelor of Technology (B.Tech)</td>
+          <td>Computer Science and Engineering</td>
+          <td>Balaji Institute of Technology and Sciences</td>
+          <td>2022</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <span class="skill-name">Digital Marketing Automation</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">n8n / Zapier</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">CRM Integration</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Meta Ads Optimization</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">AI + API Workflows</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="hobbies">
+    <h2 class="section-title">Hobbies & Interests</h2>
+    <div class="hobbies-grid">
+      <div class="hobby-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <div>
+          <h4>Surfing the Internet</h4>
+          <p>Exploring the latest trends and technologies online</p>
+        </div>
+      </div>
+      <div class="hobby-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        <div>
+          <h4>Reading Technical Articles</h4>
+          <p>Staying updated with the latest developments in technology and automation</p>
+        </div>
+      </div>
+      <div class="hobby-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div>
+          <h4>Exploring New AI Tools and APIs</h4>
+          <p>Discovering and experimenting with cutting-edge AI technologies and API integrations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Sujith Kasthuri. All rights reserved.</p>
+  </footer>
+</div>
+</body>
+</html>
