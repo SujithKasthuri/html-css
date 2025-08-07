@@ -1,0 +1,299 @@
+/* Mood board colors and typography */
+:root {
+    --bg: #121214;              /* Very dark background */
+    --text: #e0e0e0;            /* Light off-white */
+    --accent: #00b0b0;          /* Bright teal */
+    --card-bg: #1e1e1f;         /* Card background */
+    --shadow: rgba(0, 176, 176, 0.24);
+    --error-color: #f44336;
+    --success-color: #4caf50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Header Section */
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.profile-picture {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #333;
+    background-size: cover;
+    background-position: center;
+    border: 3.5px solid var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.header-main h1 {
+    font-size: 3rem;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.header-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.header-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.25s ease;
+}
+
+.header-links a:hover,
+.header-links a:focus {
+    color: #33ffff;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0 50px 0;
+    flex-wrap: wrap;
+}
+
+.nav-buttons button {
+    background: none;
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    border: 2.5px solid var(--accent);
+    padding: 12px 26px;
+    border-radius: 36px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.22s, color 0.22s, border-color 0.22s;
+    user-select: none;
+}
+
+.nav-buttons button:hover,
+.nav-buttons button.active,
+.nav-buttons button:focus {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* Section Styling */
+main > section {
+    background: var(--card-bg);
+    padding: 32px 40px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 18px var(--shadow);
+    transition: box-shadow 0.25s ease;
+}
+
+main > section:focus-within,
+main > section:focus {
+    box-shadow: 0 0 20px var(--accent);
+    outline: none;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 18px;
+    color: var(--accent);
+    letter-spacing: 0.7px;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 14px;
+    font-weight: 700;
+}
+
+/* Text */
+p, ul, ol {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 26px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Skills tags - placeholders, can be dynamically added */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag {
+    background: #004d4d;
+    color: var(--text);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    user-select: none;
+}
+
+/* Education Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead tr {
+    background: var(--accent);
+    color: var(--bg);
+    text-align: left;
+    font-weight: 700;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #333;
+}
+
+tbody tr:hover {
+    background: #165959;
+}
+
+/* Contact form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contact-form label {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 2px solid #444;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.25s ease;
+    resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 6px var(--accent);
+}
+
+#contact-form button {
+    width: 160px;
+    background: var(--accent);
+    border: none;
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+}
+
+#contact-form button:hover,
+#contact-form button:focus {
+    background: #00d4d4;
+    outline: none;
+}
+
+#form-status {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Success and error messages */
+#form-status.success {
+    color: var(--success-color);
+}
+
+#form-status.error {
+    color: var(--error-color);
+}
+
+/* Responsive styles */
+@media (max-width: 720px) {
+    body {
+        padding: 20px 15px;
+    }
+    .header-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+    }
+    .header-main h1 {
+        font-size: 2.3rem;
+    }
+    .nav-buttons {
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 35px;
+    }
+    main > section {
+        padding: 26px 20px;
+    }
+    #contact-form button {
+        width: 100%;
+    }
+}

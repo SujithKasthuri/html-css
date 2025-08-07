@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sujith Kasthuri - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600|Poppins:400,600&display=swap" />
+    <link rel="stylesheet" href="styles2.css" />
+    <script src="scripts2.js" defer></script>
+    
+
+</head>
+<body>
+    <header class="header-flex">
+        <div class="profile-picture" aria-label="Profile picture of Sujith Kasthuri" style="background-image: url('./image.png');"></div>
+        <div class="header-main">
+            <h1>Sujith Kasthuri</h1>
+            <p class="subtitle">Automation Workflow Specialist</p>
+            <nav class="header-links" aria-label="Contact and social links">
+                <a href="mailto:Sujithkasturi2000@gmail.com">Sujithkasturi2000@gmail.com</a>
+                <a href="tel:+919618660539">9618660539</a>
+                <a href="https://www.linkedin.com/in/sujith-kasthuri-3474411b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="nav-buttons" aria-label="Main navigation">
+        <button type="button" data-section="about" class="active">About</button>
+        <button type="button" data-section="skills">Skills</button>
+        <button type="button" data-section="projects">Projects</button>
+        <button type="button" data-section="achievements">Achievements</button>
+        <button type="button" data-section="certifications">Certifications</button>
+        <button type="button" data-section="education">Education</button>
+        <button type="button" data-section="contact">Contact</button>
+    </nav>
+
+    <main>
+        <section id="about" tabindex="0">
+            <h2>About Me</h2>
+            <p>
+                Specialist in building automation workflows for digital marketing services. Expert in n8n, Google Sheets, WhatsApp API, and CRM integration for lead flow automation and reporting. Focused on maximizing performance, speed, and low-code efficiency.
+            </p>
+            <p>
+                Specialized in developing and implementing automation solutions for digital marketing workflow optimization. Responsible for designing efficient processes that streamline campaign management, data analysis, and reporting systems.
+            </p>
+        </section>
+
+        <section id="skills" tabindex="0">
+            <h2>Skills & Tools</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <p>
+                        n8n, Make.com, Airtable, Slack, Gmail, REST API, Webhooks, Python, JSON, Google Ads, Meta Ads, Google Tag Manager, MS Excel, MS PowerPoint, Outlook
+                    </p>
+                </div>
+                <div class="skill-category">
+                    <h3>Personality Skills</h3>
+                    <p>
+                        Communication, Documentation, Process Design, Problem Solving, Critical Thinking, Team Collaboration, Adaptability
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" tabindex="0">
+            <h2>Projects</h2>
+            <ul id="projects-list">
+                <li>Created internal workflows for the digital marketing team to improve productivity in daily tasks, automate lead assignment to sales, and provide actionable reports to management using low-code automation tools.</li>
+                <li>Developed a chatbot with voice assistant capabilities for <strong>bristletech.com</strong>.</li>
+            </ul>
+        </section>
+
+        <section id="achievements" tabindex="0">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Built a Gmail → Airtable → Slack automation that reduced manual update time by 70%.</li>
+                <li>Implemented Meta Ads to CRM sync automation using webhook integrations.</li>
+                <li>Reduced ad ops team errors by designing reusable SOP-driven n8n flows.</li>
+                <li>Decreased ad spend by 15% while improving lead conversion quality through faster lead routing.</li>
+            </ul>
+        </section>
+
+        <section id="certifications" tabindex="0">
+            <h2>Certifications</h2>
+            <ul id="certifications-list">
+                <li>Google Ads Certification</li>
+                <li>Fundamentals of Digital Marketing – Google</li>
+                <li>Python for Data Science – Udemy</li>
+                <li>Internal n8n Workflow Certification (Company-level)</li>
+                <li>Udemy: n8n Course on AI Agents and Workflows</li>
+            </ul>
+        </section>
+
+        <section id="education" tabindex="0">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Specialization</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bachelor of Technology (B.Tech)</td>
+                        <td>Computer Science and Engineering</td>
+                        <td>Balaji Institute of Technology and Sciences</td>
+                        <td>2022</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate</td>
+                        <td>MPC</td>
+                        <td>Navavigyana Bharathi</td>
+                        <td>2018</td>
+                    </tr>
+                    <tr>
+                        <td>School</td>
+                        <td>-</td>
+                        <td>Cambridge Grammar High School</td>
+                        <td>2016</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact" tabindex="0">
+            <h2>Contact Me</h2>
+            <form id="contact-form" onsubmit="sendToWhatsApp(event)">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Write your message here..." rows="5"></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p id="form-status" aria-live="polite" role="alert"></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
